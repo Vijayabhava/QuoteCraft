@@ -1,0 +1,134 @@
+/* Background with aurora vibes */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6a00, #ee0979, #0f2027);
+  background-size: 400% 400%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bgShift 15s ease infinite;
+  color: #fff;
+  overflow: hidden;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Quote Box */
+.container {
+  text-align: center;
+  padding: 60px 50px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 25px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.08), 0 0 100px rgba(255, 255, 255, 0.05);
+  max-width: 900px;
+  width: 95%;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Glowing blob effects */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ff009955, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.container::before {
+  top: -100px;
+  left: -100px;
+}
+
+.container::after {
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.1); }
+}
+
+/* Header */
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Quote Text */
+#quote-box {
+  font-size: 1.7rem;
+  line-height: 1.8;
+  color: #ffe;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  min-height: 120px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Author */
+#author {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #ffd;
+  margin-top: 10px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Button Style */
+button {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 65, 108, 0.4);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 65, 108, 0.7);
+}
+
+/* Fade animation */
+.fade {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
